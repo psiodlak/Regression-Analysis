@@ -10,6 +10,8 @@ y <- b0 - b1*x + rnorm(sd=5)
 
 ?runif
 
+summary(y)
+
 #set the true slope and intercept. remember, as the data analyst you *never* know these
 #we only do here because we are pretending.
 beta.0 <- 2.5
@@ -45,6 +47,8 @@ x <- rnorm(ns,sd=2)
 y <- beta.0 + beta.1*x + rnorm(ns, sd=sqrt(sigma2))
 abline(lm(y~x), col="red", lty=2, lwd=2)
 
+summary(y)
+
 
 # 2 b
 ns <- 75 # sample size
@@ -55,9 +59,13 @@ abline(lm(y~x), col="green", lty=2, lwd=2)
 legend("bottomright", c(nc, sc,  "true model", "25 size LS line", "75 size LS line"), 
        col=c(0, 0, "blue", "red", "green"), lwd=1, lty=c(0,0,1,2,2), bty="n", cex=0.7)
 
+summary(y)
+
 #2 c
 # Marginal True Mean
 summary(y)
 # Marginal predicted mean
 summary(lm(y~x))
+
+#Paulina comment - I calculated the summary(y) for n=100, n=25, and n=75
 
