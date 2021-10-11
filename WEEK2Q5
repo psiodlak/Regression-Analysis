@@ -1,0 +1,14 @@
+#HW5, part g
+
+library(readr)
+smsa <- read_csv("Downloads/smsa.csv")
+View(smsa)
+
+#b)
+#https://search.r-project.org/CRAN/refmans/eivtools/html/eivreg.html
+
+#g)
+lm_smsa <- lm(smsa$Mortality~smsa$HCPot)
+summary(lm_smsa)
+plot(smsa$HCPot, smsa$Mortality, pch=20, ylab="Mortality Rate", xlab="Pollution (HCPot)")
+abline(lm(smsa$Mortality~smsa$HCPot), col="green", lty=2, lwd=2)
