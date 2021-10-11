@@ -20,13 +20,14 @@ abline(lm(cost~age), col="red", lty=2, lwd=2)
 
 # correlation
 
-correlation <- cor (age,cost)
-sd_x <- sd(x)
-sd_y <- sd(y)
+correlation <- cor(age,cost)
+correlation
+sd_x <- sd(age)
+sd_x 
+sd_y <- sd(cost)
+sd_y
 
-#b1 <- correlation*(sd_y/sd_x)
-#b1
-# Why is this not working?
+b1 <- correlation*(sd_y/sd_x)
 
 # b1 = covariance (x,y) / sample variance of x
 
